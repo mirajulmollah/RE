@@ -3,7 +3,7 @@
 function App() {
   return (
     <div className="App">
-     <h1>This is My Frist React Project and Frist git project</h1>
+     <h1>This is My Frist React Project</h1>
     </div>
   );
 }
