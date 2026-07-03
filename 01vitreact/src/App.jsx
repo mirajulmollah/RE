@@ -1,10 +1,11 @@
 
 
+import Chai from './Chai.jsx'
 function App() {
   
 
   return (
-    <h1>This is my Frist React with vite</h1>
+    <Chai />
       
   )
 }
