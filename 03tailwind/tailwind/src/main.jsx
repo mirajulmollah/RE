@@ -5,6 +5,9 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
+  <div className="flex gap-6 justify-center flex-wrap p-5">
+    <App  />
+    
+  </div>
+</StrictMode>
 )

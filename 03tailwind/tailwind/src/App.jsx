@@ -3,13 +3,16 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import Card from './Card.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-     <h1 className="bg-blue-500 text-white px-6 py-3 rounded-lg">I am mirajul</h1>
+     <Card username="Mirajul" btntxt="Click me!" />
+     <Card username="RAktim" btntxt="Press Me" />
+     <Card />
     </>
   )
 }
