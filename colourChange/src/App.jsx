@@ -1,11 +1,11 @@
 import { useCallback, useState } from 'react'
-import './App.css'
+
 
 function App() {
   const[length,setlength]=useState(8)
   const[numallowed,setnumallowed]=useState(false)
   const[charallowed,setcharallowed]=useState(false)
-  const[passwrd,setpasswrd]=useState(" ")
+  const[password,setpassword]=useState("")
   const passwordGenerator=useCallback(()=>{
     let pass=""
     let str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
@@ -14,17 +14,28 @@ function App() {
 
     }
     if(charallowed) str+="!@#$%^&*()"
-    for(i==1;i<=length;i++){
-      let char=(Math.floor(Math.random() * str.length)) +1
+    for(let i=1;i<=length;i++){
+      let char=(Math.floor(Math.random() * str.length))
       pass+=str.charAt(char)
     }
-    setpasswrd(pass)
+    setpassword(pass)
   },[length,numallowed,charallowed])
 
 
   return (
     <>
-      <h1 className='text-4xl text-center text-white mt-8'>Password Generator</h1>
+      <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 my-4 text-orange-500  bg-gray-700">
+      <h1 className='text-white text-center'>Password Generator</h1>
+      <div className='flex shadow-md rounded-lg overflow-hidden mb-4'>
+      <input
+        type="text"
+        value={password}
+        className='outline-none w-full py-1 px-3 bg-white'
+        placeholder="password"
+        readOnly />
+
+      </div>
+      </div>
     </>
   )
 }
