@@ -1,15 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import { useCallback, useState } from 'react'
 import './App.css'
 
 function App() {
-  
+  const[length,setlength]=useState(8)
+  const[numallowed,setnumallowed]=useState(false)
+  const[charallowed,setcharallowed]=useState(false)
+  const[passwrd,setpasswrd]=useState(" ")
+  const passwordGenerator=useCallback(()=>{
+    let pass=""
+    let str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+    if(numallowed){
+      str+="0123456789"
+
+    }
+    if(charallowed) str+="!@#$%^&*()"
+    for(i==1;i<=length;i++){
+      let char=(Math.floor(Math.random() * str.length)) +1
+      pass+=str.charAt(char)
+    }
+    setpasswrd(pass)
+  },[length,numallowed,charallowed])
+
 
   return (
     <>
-      <button onClick className= "bg-blue-500">Blue</button>
+      <h1 className='text-4xl text-center text-white mt-8'>Password Generator</h1>
     </>
   )
 }
